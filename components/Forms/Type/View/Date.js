@@ -1,7 +1,7 @@
 import React from "react";
 import { useShowForm } from "../../ShowForm";
 
-const Text = ({id, name}) => {
+const DateBox = ({id, name}) => {
 	const [state, setState] = useShowForm();
 	const setValue = (id, value) => {
 		const newState = [...state].map((item) => item.id === id ? {...item, value} : item);
@@ -9,9 +9,10 @@ const Text = ({id, name}) => {
 	}
 	return (
 		<>
-			<h1>Text: {name}</h1>
-			<input type="text" placeholder="Response" onChange={(e) => {
+			<h1>Date: {name}</h1>
+			<input type="date" placeholder="Response" onChange={(e) => {
 				const value = e.target.value;
+				console.log(value);
 				if (value.length === 0) {
 					setValue(id, null);
 					return;
@@ -22,4 +23,4 @@ const Text = ({id, name}) => {
 	);
 };
 
-export default Text;
+export default DateBox;

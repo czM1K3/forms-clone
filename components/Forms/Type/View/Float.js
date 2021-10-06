@@ -1,7 +1,7 @@
 import React from "react";
 import { useShowForm } from "../../ShowForm";
 
-const Text = ({id, name}) => {
+const Float = ({id, name}) => {
 	const [state, setState] = useShowForm();
 	const setValue = (id, value) => {
 		const newState = [...state].map((item) => item.id === id ? {...item, value} : item);
@@ -9,10 +9,10 @@ const Text = ({id, name}) => {
 	}
 	return (
 		<>
-			<h1>Text: {name}</h1>
-			<input type="text" placeholder="Response" onChange={(e) => {
-				const value = e.target.value;
-				if (value.length === 0) {
+			<h1>Float: {name}</h1>
+			<input type="number" step="0.01" placeholder="Response" onChange={(e) => {
+				const value = parseFloat(e.target.value);
+				if (!value) {
 					setValue(id, null);
 					return;
 				}
@@ -22,4 +22,4 @@ const Text = ({id, name}) => {
 	);
 };
 
-export default Text;
+export default Float;

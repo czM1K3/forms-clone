@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../../components/Layout";
 import { useRouter } from "next/router"
+import ShowForm from "../../components/Forms/ShowForm";
 
 const Form = () => {
 	const router = useRouter();
@@ -10,7 +11,7 @@ const Form = () => {
 	if (!intId) return <Layout>Invalid ID</Layout>;
 	return (
 		<Layout>
-			<h1>{intId}</h1>
+			<ShowForm id={id} />
 		</Layout>
 	);
 };
