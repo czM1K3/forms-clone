@@ -4,7 +4,6 @@ const SessionContext = createContext(null);
 
 export const SessionProvider = ({ children }) => {
 	const [state, setState] = useState(null);
-	console.log("help");
 	return (
 		<SessionContext.Provider value={{state, setState}}>
 			{children}
