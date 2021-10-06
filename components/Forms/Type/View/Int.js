@@ -8,8 +8,8 @@ const Int = ({id, name}) => {
 		setState(newState);
 	}
 	return (
-		<>
-			<h1>Int: {name}</h1>
+		<li className="list-group-item d-flex justify-content-between">
+			<h2>Int: {name}</h2>
 			<input type="number" placeholder="Response" onChange={(e) => {
 				const value = parseInt(e.target.value);
 				if (!value) {
@@ -18,7 +18,7 @@ const Int = ({id, name}) => {
 				}
 				setValue(id, value);
 			}} />
-		</>
+		</li>
 	);
 };
 

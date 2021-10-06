@@ -8,8 +8,8 @@ const Float = ({id, name}) => {
 		setState(newState);
 	}
 	return (
-		<>
-			<h1>Float: {name}</h1>
+		<li className="list-group-item d-flex justify-content-between">
+			<h2>Float: {name}</h2>
 			<input type="number" step="0.01" placeholder="Response" onChange={(e) => {
 				const value = parseFloat(e.target.value);
 				if (!value) {
@@ -18,7 +18,7 @@ const Float = ({id, name}) => {
 				}
 				setValue(id, value);
 			}} />
-		</>
+		</li>
 	);
 };
 

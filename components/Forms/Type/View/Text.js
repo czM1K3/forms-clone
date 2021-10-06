@@ -8,8 +8,8 @@ const Text = ({id, name}) => {
 		setState(newState);
 	}
 	return (
-		<>
-			<h1>Text: {name}</h1>
+		<li className="list-group-item d-flex justify-content-between">
+			<h2>Text: {name}</h2>
 			<input type="text" placeholder="Response" onChange={(e) => {
 				const value = e.target.value;
 				if (value.length === 0) {
@@ -18,7 +18,7 @@ const Text = ({id, name}) => {
 				}
 				setValue(id, value);
 			}} />
-		</>
+		</li>
 	);
 };
 

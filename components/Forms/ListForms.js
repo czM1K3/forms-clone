@@ -21,9 +21,9 @@ const ListForms = () => {
 	if (loading) return <Loading />;
 	if (error) return <p>Error</p>;
 	return (
-		<div>
+		<ul className="list-group">
 			{forms.map(form => <SingleFormWidget name={form.name} id={form.id} key={form.id} />)}
-		</div>
+		</ul>
 	);
 };
 

@@ -45,14 +45,16 @@ const ShowForm = ({id}) => {
 	if (loading) return <Loading />;
 	return (
 		<div>
-			<h1>Form {formName}</h1>
+			<h1>Form: {formName}</h1>
 			<ShowFormContext.Provider value={{ selectedTypes, setSelectedTypes }}>
-				<div>
+				<ul className="list-group">
 					{selectedTypes.map(element => element.render)}
-				</div>
+				</ul>
 			</ShowFormContext.Provider>
-			<div>
+			<div className="d-flex justify-content-between">
+				<div></div>
 				<button
+					className="btn btn-primary m-2"
 					onClick={() => {
 						console.log(selectedTypes);
 					}}

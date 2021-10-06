@@ -8,8 +8,8 @@ const DateBox = ({id, name}) => {
 		setState(newState);
 	}
 	return (
-		<>
-			<h1>Date: {name}</h1>
+		<li className="list-group-item d-flex justify-content-between">
+			<h2>Date: {name}</h2>
 			<input type="date" placeholder="Response" onChange={(e) => {
 				const value = e.target.value;
 				console.log(value);
@@ -19,7 +19,7 @@ const DateBox = ({id, name}) => {
 				}
 				setValue(id, value);
 			}} />
-		</>
+		</li>
 	);
 };
 

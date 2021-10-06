@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSession } from "../utils/sessionContext";
 import { supabase } from "../utils/supabaseClient";
 import Loading from "./Loading";
+import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
 	const [loading, setLoading] = useState(true);
@@ -14,11 +15,13 @@ const Layout = ({ children }) => {
 		setLoading(false)
 	}, []);
 
-	if (loading) return <Loading />
 	return (
-		<div className="container">
-			{children}
-		</div>
+		<>
+			<Navbar />
+			<div className="container">
+				{loading ? <Loading /> : children}
+			</div>
+		</>
 	);
 };
 

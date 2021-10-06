@@ -54,7 +54,7 @@ const CreateForm = () => {
 	if (!session) return <Login />
 	return (
 		<div>
-			<h1>Create form</h1>
+			<h2>Create form</h2>
 			<div>
 				<button onClick={() => createType("text", "Text field") }>Add text</button>
 				<button onClick={() => createType("int", "Int field") }>Add int</button>

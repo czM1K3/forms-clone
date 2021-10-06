@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main className="container">
-        <h1>Test</h1>
+        <h1>Forms</h1>
         <ListForms />
       </main>
     </Layout>
